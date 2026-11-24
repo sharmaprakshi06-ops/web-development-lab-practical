@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Expense Tracker</title>
+  <link rel="stylesheet" href="FILE.CSS">
+</head>
+<body>
+  <main class="container">
+
+    <header>
+      <h1>💸 My Expense Tracker</h1>
+      <p class="subtitle">Keep track of where your pocket money goes.</p>
+    </header>
+
+    <section class="card summary">
+      <div class="summary-item">
+        <span class="summary-label" id="totalLabel">Total Spent</span>
+        <span class="summary-value" id="totalAmount">₹0.00</span>
+      </div>
+      <div class="summary-item">
+        <span class="summary-label">Overall (all categories)</span>
+        <span class="summary-value muted" id="overallAmount">₹0.00</span>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Add an Expense</h2>
+      <form id="expenseForm" novalidate>
+        <div class="form-grid">
+          <div class="field">
+            <label for="expenseName">What did you spend on?</label>
+            <input type="text" id="expenseName" placeholder="e.g. Lunch at canteen" maxlength="60">
+          </div>
+          <div class="field">
+            <label for="expenseAmount">Amount (₹)</label>
+            <input type="number" id="expenseAmount" placeholder="e.g. 120" step="0.01" min="0">
+          </div>
+          <div class="field">
+            <label for="expenseCategory">Category</label>
+            <select id="expenseCategory">
+              <option value="Food">Food</option>
+              <option value="Travel">Travel</option>
+              <option value="Shopping">Shopping</option>
+              <option value="Education">Education</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+        </div>
+        <p id="errorMessage" class="error" role="alert"></p>
+        <button type="submit" id="addBtn">Add Expense</button>
+      </form>
+    </section>
+
+    <section class="card">
+      <div class="list-header">
+        <h2>Your Expenses</h2>
+        <div class="filter">
+          <label for="filterCategory">Show:</label>
+          <select id="filterCategory">
+            <option value="All">All</option>
+            <option value="Food">Food</option>
+            <option value="Travel">Travel</option>
+            <option value="Shopping">Shopping</option>
+            <option value="Education">Education</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+      </div>
+      <ul id="expenseList" class="expense-list"></ul>
+      <p id="emptyMessage" class="empty">Nothing here yet.</p>
+    </section>
+
+  </main>
+
+    <script src="FILE.JS"></script>
+</body>
+</html>
